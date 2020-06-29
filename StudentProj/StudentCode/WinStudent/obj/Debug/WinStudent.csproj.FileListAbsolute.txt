@@ -1,0 +1,13 @@
+E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\bin\Debug\WinStudent.exe.config
+E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\bin\Debug\WinStudent.exe
+E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\bin\Debug\WinStudent.pdb
+E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\WinStudent.csprojAssemblyReference.cache
+E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\WinStudent.FrmLogin.resources
+E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\WinStudent.Properties.Resources.resources
+E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\WinStudent.csproj.GenerateResource.cache
+E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\WinStudent.csproj.CoreCompileInputs.cache
+E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\WinStudent.exe
+E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\WinStudent.pdb
+E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\WinStudent.FrmMain.resources
+E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\WinStudent.FrmAddStudent.resources
+E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\WinStudent.FrmStudentList.resources
