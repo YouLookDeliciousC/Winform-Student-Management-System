@@ -82,6 +82,7 @@
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(232, 25);
             this.txtUserName.TabIndex = 4;
+            this.txtUserName.TextChanged += new System.EventHandler(this.txtUserName_TextChanged);
             // 
             // txtUserPwd
             // 
@@ -92,6 +93,7 @@
             // 
             // FrmLogin
             // 
+            this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(532, 342);
@@ -105,6 +107,7 @@
             this.MaximizeBox = false;
             this.Name = "FrmLogin";
             this.Text = "LoginPage";
+            this.Activated += new System.EventHandler(this.FrmLogin_Activated);
             this.Load += new System.EventHandler(this.FrmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

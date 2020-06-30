@@ -51,7 +51,7 @@
             this.miExit});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(871, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(767, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -68,14 +68,14 @@
             // subAddStudent
             // 
             this.subAddStudent.Name = "subAddStudent";
-            this.subAddStudent.Size = new System.Drawing.Size(224, 26);
+            this.subAddStudent.Size = new System.Drawing.Size(185, 26);
             this.subAddStudent.Text = "Add Student";
             this.subAddStudent.Click += new System.EventHandler(this.addStudentToolStripMenuItem_Click);
             // 
             // subStudentList
             // 
             this.subStudentList.Name = "subStudentList";
-            this.subStudentList.Size = new System.Drawing.Size(224, 26);
+            this.subStudentList.Size = new System.Drawing.Size(185, 26);
             this.subStudentList.Text = "Student List";
             this.subStudentList.Click += new System.EventHandler(this.subStudentList_Click);
             // 
@@ -85,7 +85,7 @@
             this.subAddClass,
             this.subClassList});
             this.miClass.Name = "miClass";
-            this.miClass.Size = new System.Drawing.Size(160, 26);
+            this.miClass.Size = new System.Drawing.Size(160, 24);
             this.miClass.Text = "Class Management";
             // 
             // subAddClass
@@ -93,19 +93,21 @@
             this.subAddClass.Name = "subAddClass";
             this.subAddClass.Size = new System.Drawing.Size(224, 26);
             this.subAddClass.Text = "Add Class";
+            this.subAddClass.Click += new System.EventHandler(this.subAddClass_Click);
             // 
             // subClassList
             // 
             this.subClassList.Name = "subClassList";
             this.subClassList.Size = new System.Drawing.Size(224, 26);
             this.subClassList.Text = "Class List";
+            this.subClassList.Click += new System.EventHandler(this.subClassList_Click);
             // 
             // miGrade
             // 
             this.miGrade.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.subGradeList});
             this.miGrade.Name = "miGrade";
-            this.miGrade.Size = new System.Drawing.Size(168, 26);
+            this.miGrade.Size = new System.Drawing.Size(168, 24);
             this.miGrade.Text = "Grade Management";
             // 
             // subGradeList
@@ -113,23 +115,26 @@
             this.subGradeList.Name = "subGradeList";
             this.subGradeList.Size = new System.Drawing.Size(224, 26);
             this.subGradeList.Text = "Grade List";
+            this.subGradeList.Click += new System.EventHandler(this.subGradeList_Click);
             // 
             // miExit
             // 
             this.miExit.Name = "miExit";
-            this.miExit.Size = new System.Drawing.Size(106, 26);
+            this.miExit.Size = new System.Drawing.Size(106, 24);
             this.miExit.Text = "Exit System";
+            this.miExit.Click += new System.EventHandler(this.miExit_Click);
             // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(871, 487);
+            this.ClientSize = new System.Drawing.Size(767, 534);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMain";
             this.Text = "Student Management System Main Page";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmMain_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);

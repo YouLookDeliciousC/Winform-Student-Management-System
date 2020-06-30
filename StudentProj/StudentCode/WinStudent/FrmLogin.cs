@@ -15,12 +15,14 @@ namespace WinStudent
     {
         public FrmLogin()
         {
+            
             InitializeComponent();
+            
         }
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -121,6 +123,16 @@ namespace WinStudent
         private void btnExit_Click(object sender, EventArgs e)
         {
             this.Close(); //如果不是主页面，且要退出系统，要用Application.Exit();
+        }
+
+        private void txtUserName_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void FrmLogin_Activated(object sender, EventArgs e)
+        {
+            txtUserName.Focus();
         }
     }
 }

@@ -47,11 +47,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAddClass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddClass.Designer.cs">
+      <DependentUpon>FrmAddClass.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAddStudent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAddStudent.Designer.cs">
       <DependentUpon>FrmAddStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmClassList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmClassList.Designer.cs">
+      <DependentUpon>FrmClassList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGradeList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGradeList.Designer.cs">
+      <DependentUpon>FrmGradeList.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmMain.cs">
       <SubType>Form</SubType>
@@ -74,8 +92,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAddClass.resx">
+      <DependentUpon>FrmAddClass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAddStudent.resx">
       <DependentUpon>FrmAddStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmClassList.resx">
+      <DependentUpon>FrmClassList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGradeList.resx">
+      <DependentUpon>FrmGradeList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
