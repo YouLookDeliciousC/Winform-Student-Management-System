@@ -41,21 +41,23 @@ namespace WinStudent
             string sql = "select ClassId,ClassName,GradeName from ClassInfo c " +
                 "inner join GradeInfo g on c.GradeId=g.GradeId";
             DataTable dtClasses = SqlHelper.GetDataTable(sql);
+            //组合班级列表显示项
             if (dtClasses.Rows.Count > 0)
             {
                 foreach(DataRow dr in dtClasses.Rows)
                 {
                     string className = dr["ClassName"].ToString();
                     string gradeName = dr["GradeName"].ToString();
-                    dr["ClassName"] = className + gradeName;
+                    dr["ClassName"] = className +"-"+ gradeName;
                 }
             }
+            //添加默认项
             DataRow drnew = dtClasses.NewRow();
             drnew["ClassId"] = 0;
             drnew["ClassName"] = "Please Choose";
 
             dtClasses.Rows.InsertAt(drnew, 0);
-
+            //指定数据源
             cboClasses.DataSource = dtClasses;
             cboClasses.DisplayMember = "ClassName";
             cboClasses.ValueMember = "ClassId";
