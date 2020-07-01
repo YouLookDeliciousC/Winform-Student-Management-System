@@ -14,3 +14,6 @@ E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\WinStudent.FrmSt
 E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\WinStudent.FrmAddClass.resources
 E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\WinStudent.FrmClassList.resources
 E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\WinStudent.FrmGradeList.resources
+E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\bin\Debug\en-GB\WinStudent.resources.dll
+E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\WinStudent.FrmLogin.en-GB.resources
+E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\en-GB\WinStudent.resources.dll

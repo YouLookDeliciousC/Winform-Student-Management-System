@@ -41,7 +41,7 @@ namespace WinStudent
         private void InitAllClasses()
         {
             string sql = "select ClassId,ClassName,GradeName,Remark from ClassInfo c " +
-                "inner join GradeInfo d on c.GradeId = d.GradeId";
+                "inner join GradeInfo d on c.GradeId = d.GradeId order by GradeName";
             DataTable dtClasses = SqlHelper.GetDataTable(sql);
             dgvClassList.DataSource = dtClasses;
         }

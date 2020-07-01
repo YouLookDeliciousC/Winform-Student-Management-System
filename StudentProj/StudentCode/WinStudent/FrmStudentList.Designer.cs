@@ -28,18 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.cboClasses = new System.Windows.Forms.ComboBox();
-            this.txtName = new System.Windows.Forms.TextBox();
             this.btnFind = new System.Windows.Forms.Button();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.cboClasses = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.dgvStudentList = new System.Windows.Forms.DataGridView();
-            this.StuId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.StudentId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StuName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClassName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sex = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEdit = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.colDel = new System.Windows.Forms.DataGridViewLinkColumn();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
             this.SuspendLayout();
@@ -60,14 +65,30 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Query condition";
             // 
-            // label1
+            // btnFind
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(52, 43);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Class:";
+            this.btnFind.Location = new System.Drawing.Point(605, 36);
+            this.btnFind.Name = "btnFind";
+            this.btnFind.Size = new System.Drawing.Size(75, 26);
+            this.btnFind.TabIndex = 4;
+            this.btnFind.Text = "Query";
+            this.btnFind.UseVisualStyleBackColor = true;
+            this.btnFind.Click += new System.EventHandler(this.btnFind_Click);
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(345, 36);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(152, 25);
+            this.txtName.TabIndex = 3;
+            // 
+            // cboClasses
+            // 
+            this.cboClasses.FormattingEnabled = true;
+            this.cboClasses.Location = new System.Drawing.Point(113, 39);
+            this.cboClasses.Name = "cboClasses";
+            this.cboClasses.Size = new System.Drawing.Size(144, 23);
+            this.cboClasses.TabIndex = 2;
             // 
             // label2
             // 
@@ -78,41 +99,28 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Name:";
             // 
-            // cboClasses
+            // label1
             // 
-            this.cboClasses.FormattingEnabled = true;
-            this.cboClasses.Location = new System.Drawing.Point(113, 39);
-            this.cboClasses.Name = "cboClasses";
-            this.cboClasses.Size = new System.Drawing.Size(144, 23);
-            this.cboClasses.TabIndex = 2;
-            // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(345, 36);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(152, 25);
-            this.txtName.TabIndex = 3;
-            // 
-            // btnFind
-            // 
-            this.btnFind.Location = new System.Drawing.Point(605, 38);
-            this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(75, 23);
-            this.btnFind.TabIndex = 4;
-            this.btnFind.Text = "Query";
-            this.btnFind.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(52, 43);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Class:";
             // 
             // dgvStudentList
             // 
-            this.dgvStudentList.AllowUserToAddRows = false;
             this.dgvStudentList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStudentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStudentList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.StuId,
+            this.colCheck,
+            this.StudentId,
             this.StuName,
             this.ClassName,
             this.Sex,
-            this.Phone});
+            this.Phone,
+            this.colEdit,
+            this.colDel});
             this.dgvStudentList.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.dgvStudentList.Location = new System.Drawing.Point(0, 106);
             this.dgvStudentList.Name = "dgvStudentList";
@@ -120,17 +128,25 @@
             this.dgvStudentList.RowTemplate.Height = 27;
             this.dgvStudentList.Size = new System.Drawing.Size(800, 344);
             this.dgvStudentList.TabIndex = 1;
+            this.dgvStudentList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvStudentList_CellContentClick);
             // 
-            // StuId
+            // colCheck
             // 
-            this.StuId.HeaderText = "ID";
-            this.StuId.MinimumWidth = 6;
-            this.StuId.Name = "StuId";
-            this.StuId.ReadOnly = true;
+            this.colCheck.HeaderText = "Select";
+            this.colCheck.MinimumWidth = 6;
+            this.colCheck.Name = "colCheck";
+            // 
+            // StudentId
+            // 
+            this.StudentId.DataPropertyName = "StudentId";
+            this.StudentId.HeaderText = "ID";
+            this.StudentId.MinimumWidth = 6;
+            this.StudentId.Name = "StudentId";
+            this.StudentId.ReadOnly = true;
             // 
             // StuName
             // 
-            this.StuName.DataPropertyName = "StuName";
+            this.StuName.DataPropertyName = "StudentName";
             this.StuName.HeaderText = "Name";
             this.StuName.MinimumWidth = 6;
             this.StuName.Name = "StuName";
@@ -160,6 +176,22 @@
             this.Phone.Name = "Phone";
             this.Phone.ReadOnly = true;
             // 
+            // colEdit
+            // 
+            dataGridViewCellStyle1.NullValue = "Update";
+            this.colEdit.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colEdit.HeaderText = "Update";
+            this.colEdit.MinimumWidth = 6;
+            this.colEdit.Name = "colEdit";
+            // 
+            // colDel
+            // 
+            dataGridViewCellStyle2.NullValue = "Delete";
+            this.colDel.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colDel.HeaderText = "Delete";
+            this.colDel.MinimumWidth = 6;
+            this.colDel.Name = "colDel";
+            // 
             // FrmStudentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -187,10 +219,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvStudentList;
-        private System.Windows.Forms.DataGridViewTextBoxColumn StuId;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colCheck;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StudentId;
         private System.Windows.Forms.DataGridViewTextBoxColumn StuName;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClassName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sex;
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
+        private System.Windows.Forms.DataGridViewLinkColumn colEdit;
+        private System.Windows.Forms.DataGridViewLinkColumn colDel;
     }
 }
