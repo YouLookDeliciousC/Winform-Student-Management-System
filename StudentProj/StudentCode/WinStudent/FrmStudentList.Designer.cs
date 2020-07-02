@@ -45,6 +45,7 @@
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colDel = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.btnDel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
             this.SuspendLayout();
@@ -53,6 +54,7 @@
             // 
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnDel);
             this.groupBox1.Controls.Add(this.btnFind);
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Controls.Add(this.cboClasses);
@@ -67,7 +69,7 @@
             // 
             // btnFind
             // 
-            this.btnFind.Location = new System.Drawing.Point(605, 36);
+            this.btnFind.Location = new System.Drawing.Point(562, 36);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(75, 26);
             this.btnFind.TabIndex = 4;
@@ -192,6 +194,16 @@
             this.colDel.MinimumWidth = 6;
             this.colDel.Name = "colDel";
             // 
+            // btnDel
+            // 
+            this.btnDel.Location = new System.Drawing.Point(675, 36);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 26);
+            this.btnDel.TabIndex = 5;
+            this.btnDel.Text = "Delete";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
             // FrmStudentList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -227,5 +239,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Phone;
         private System.Windows.Forms.DataGridViewLinkColumn colEdit;
         private System.Windows.Forms.DataGridViewLinkColumn colDel;
+        private System.Windows.Forms.Button btnDel;
     }
 }

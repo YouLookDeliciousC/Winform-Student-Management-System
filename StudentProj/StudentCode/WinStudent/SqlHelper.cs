@@ -12,7 +12,7 @@ namespace WinStudent
     class SqlHelper
     {
 
-        private static readonly string connString =ConfigurationManager.ConnectionStrings["connStr"].ConnectionString;
+        public static readonly string connString =ConfigurationManager.ConnectionStrings["connStr"].ConnectionString;
         public static object ExecuteScalar(string sql, params SqlParameter[] paras)
         {
             object o = null;
