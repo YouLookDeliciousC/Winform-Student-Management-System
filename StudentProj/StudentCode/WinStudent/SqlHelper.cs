@@ -37,6 +37,34 @@ namespace WinStudent
             return o;
         }
         /// <summary>
+        /// 执行查询，返回SqlDataReader
+        /// </summary>
+        /// <param name="sql"></param>
+        /// <param name="paras"></param>
+        /// <returns></returns>
+        public static SqlDataReader ExecuteReader(string sql, params SqlParameter[] paras)
+        {
+            SqlConnection conn = new SqlConnection(connString);
+            SqlCommand cmd = new SqlCommand(sql,conn);
+            try
+            {
+                if (paras.Length > 0)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddRange(paras);
+                }
+                conn.Open();
+                SqlDataReader dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                return dr;
+            }
+            catch(Exception ex)
+            {
+                conn.Close();
+                throw new Exception("Query Excption",ex);
+            }
+        }
+
+        /// <summary>
         /// 返回dataTable  （dataset用于一次性返回多个结果）
         /// </summary>
         /// <param name="sql"></param>
@@ -96,6 +124,44 @@ namespace WinStudent
             return count;
         }
 
+        public static bool ExecuteTrans(List<CommandInfo> comList)
+        {
+            using(SqlConnection conn = new SqlConnection(connString))
+            {
+                conn.Open();
+                SqlTransaction trans = conn.BeginTransaction();
+                SqlCommand cmd = new SqlCommand();
+                cmd.Connection = conn;
+                cmd.Transaction = trans;
+                try
+                {
+                    int count = 0;
+                    for(int i = 0; i < comList.Count; i++)
+                    {
+                        cmd.CommandText = comList[i].CommandText;
+                        if (comList[i].IsProc)
+                            cmd.CommandType = CommandType.StoredProcedure;
+                        else
+                            cmd.CommandType = CommandType.Text;
+                        if (comList[i].Parameters.Length > 0)
+                        {
+                            cmd.Parameters.Clear();
+                            cmd.Parameters.AddRange(comList[i].Parameters);
+                        }
+                        count += cmd.ExecuteNonQuery();
+                        cmd.Parameters.Clear();
+
+                    }
+                    trans.Commit();
+                    return true;
+                }
+                catch(Exception e)
+                {
+                    trans.Rollback();
+                    throw new Exception("Execute transction error!", e);
+                }
+            }
+        }
 
     }
 }

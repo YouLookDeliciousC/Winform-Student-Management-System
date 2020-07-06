@@ -17,6 +17,9 @@ namespace WinStudent
         {
             InitializeComponent();
         }
+        //内置委托Action 无返回值，Func 有一个返回值
+
+        private Action reLoad = null;
 
         //实现单例
         private static FrmStudentList frmStudentList = null;
@@ -143,19 +146,32 @@ namespace WinStudent
         {
             if (e.RowIndex != -1)
             {
+                //获取行数据
+                DataRow dr = (dgvStudentList.Rows[e.RowIndex].DataBoundItem as DataRowView).Row;
                 //获取点击的单元格
                 DataGridViewCell cell = dgvStudentList.Rows[e.RowIndex].Cells[e.ColumnIndex];
                 if (cell is DataGridViewLinkCell && cell.FormattedValue.ToString() == "Update")
                 {
-                    //修改操作 打开修改页，传studentId
+                    //修改操作 打开修改页，传studentId 1.构造函数  2.tag  3.开放变量
+                    reLoad = LoadAllStudentList;// 赋值委托
+                    int stuId = (int)dr["StudentId"];
+                    FrmEditStudent frmEdit = new FrmEditStudent();
+                    frmEdit.Tag = new TagObject()
+                    {
+                        EditId = stuId,
+                        ReLoad = reLoad
+                    };
+                    frmEdit.MdiParent = this.MdiParent;
+                    frmEdit.Show();//顶级窗体
+                    
+                    
                 }
                 else if (cell is DataGridViewLinkCell && cell.FormattedValue.ToString() == "Delete")
                 {
                     if(MessageBox.Show("You absolutely want to DELETE this student?","DeleteTip",
                         MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        //获取行数据
-                        DataRow dr = (dgvStudentList.Rows[e.RowIndex].DataBoundItem as DataRowView).Row;
+                        
                         int stuId = (int)dr["StudentId"];
                         //删除操作
                         //加删除

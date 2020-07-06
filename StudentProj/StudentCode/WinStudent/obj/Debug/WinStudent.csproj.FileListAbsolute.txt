@@ -17,3 +17,5 @@ E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\WinStudent.FrmGr
 E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\bin\Debug\en-GB\WinStudent.resources.dll
 E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\WinStudent.FrmLogin.en-GB.resources
 E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\en-GB\WinStudent.resources.dll
+E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\WinStudent.FrmEditStudent.resources
+E:\WinformWorkshop\StudentProj\StudentCode\WinStudent\obj\Debug\WinStudent.FrmEditClass.resources
