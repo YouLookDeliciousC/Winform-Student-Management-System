@@ -29,7 +29,9 @@ namespace WinStudent
                 //打开连接
                 conn.Open(); //最晚打开，最早关闭
                 o = cmd.ExecuteScalar();//执行查询，返回结果第一行第一列的值，忽略其它行或列
-                                               //关闭连接
+                                        //关闭连接
+
+                cmd.Parameters.Clear(); 
                 conn.Close();
             }
                 //创建command对象
@@ -118,7 +120,9 @@ namespace WinStudent
                 //打开连接
                 conn.Open(); //最晚打开，最早关闭
                 count = cmd.ExecuteNonQuery();//执行T-sql语句，返回受影响行数
-                                        //关闭连接
+                                              //关闭连接
+
+                cmd.Parameters.Clear();
                 conn.Close();
             }
             return count;

@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDel = new System.Windows.Forms.Button();
             this.btnFind = new System.Windows.Forms.Button();
             this.txtName = new System.Windows.Forms.TextBox();
             this.cboClasses = new System.Windows.Forms.ComboBox();
@@ -45,7 +46,6 @@
             this.Phone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colDel = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.btnDel = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStudentList)).BeginInit();
             this.SuspendLayout();
@@ -67,8 +67,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Query condition";
             // 
+            // btnDel
+            // 
+            this.btnDel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDel.Location = new System.Drawing.Point(675, 36);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(75, 26);
+            this.btnDel.TabIndex = 5;
+            this.btnDel.Text = "Delete";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
+            // 
             // btnFind
             // 
+            this.btnFind.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnFind.Location = new System.Drawing.Point(562, 36);
             this.btnFind.Name = "btnFind";
             this.btnFind.Size = new System.Drawing.Size(75, 26);
@@ -112,6 +124,7 @@
             // 
             // dgvStudentList
             // 
+            this.dgvStudentList.AllowUserToAddRows = false;
             this.dgvStudentList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvStudentList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvStudentList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -193,16 +206,6 @@
             this.colDel.HeaderText = "Delete";
             this.colDel.MinimumWidth = 6;
             this.colDel.Name = "colDel";
-            // 
-            // btnDel
-            // 
-            this.btnDel.Location = new System.Drawing.Point(675, 36);
-            this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 26);
-            this.btnDel.TabIndex = 5;
-            this.btnDel.Text = "Delete";
-            this.btnDel.UseVisualStyleBackColor = true;
-            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // FrmStudentList
             // 

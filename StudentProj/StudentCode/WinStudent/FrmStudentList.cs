@@ -103,8 +103,11 @@ namespace WinStudent
         /// <param name="e"></param>
         private void btnFind_Click(object sender, EventArgs e)
         {
+            
             int classId = (int)cboClasses.SelectedValue;
             string StuName = txtName.Text.Trim();
+            
+            
 
             string sql = "select StudentId,StudentName,ClassName,GradeName,Sex,Phone from StudentInfo s" +
                 " inner join ClassInfo c on s.ClassId = c.ClassId" +
@@ -118,7 +121,7 @@ namespace WinStudent
             {
                 sql += " and StudentName like @StudentName ";
             }
-            sql += " and s.IsDeleted = 1 order by StudentId";
+            sql += " and s.IsDeleted = 0 order by StudentId";
             SqlParameter[] paras =
             {
                 new SqlParameter("@ClassId",classId),

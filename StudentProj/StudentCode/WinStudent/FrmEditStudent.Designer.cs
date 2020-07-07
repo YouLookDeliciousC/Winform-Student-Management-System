@@ -43,6 +43,7 @@
             // 
             // btnClose
             // 
+            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnClose.Location = new System.Drawing.Point(197, 280);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 31);
@@ -53,6 +54,7 @@
             // 
             // btnEdit
             // 
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.Location = new System.Drawing.Point(74, 280);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(75, 31);

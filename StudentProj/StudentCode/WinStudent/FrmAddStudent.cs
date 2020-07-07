@@ -50,7 +50,16 @@ namespace WinStudent
             cboClass.DataSource = dtClasses;
             cboClass.DisplayMember = "ClassName";
             cboClass.ValueMember = "ClassId";
-            cboClass.SelectedIndex = 0;
+            if (cboClass.SelectedIndex == -1)
+            {
+                MessageBox.Show("No Class Now,Please Add Class First");
+                
+            }
+            else
+            {
+                cboClass.SelectedIndex = 0;
+            }
+            
         }
 
         private void btnAdd_Click(object sender, EventArgs e)

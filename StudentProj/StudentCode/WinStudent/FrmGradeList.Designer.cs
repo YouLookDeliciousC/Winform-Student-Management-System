@@ -28,19 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvGradeList = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtGradeName = new System.Windows.Forms.TextBox();
-            this.btnSubmit = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.colCheck = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.GradeId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GradeName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colEdit = new System.Windows.Forms.DataGridViewLinkColumn();
             this.colDel = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtGradeName = new System.Windows.Forms.TextBox();
+            this.btnSubmit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGradeList)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +65,44 @@
             this.dgvGradeList.TabIndex = 0;
             this.dgvGradeList.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvGradeList_CellContentClick);
             // 
+            // colCheck
+            // 
+            this.colCheck.HeaderText = "Select";
+            this.colCheck.MinimumWidth = 6;
+            this.colCheck.Name = "colCheck";
+            // 
+            // GradeId
+            // 
+            this.GradeId.DataPropertyName = "GradeId";
+            this.GradeId.HeaderText = "GradeId";
+            this.GradeId.MinimumWidth = 6;
+            this.GradeId.Name = "GradeId";
+            this.GradeId.ReadOnly = true;
+            // 
+            // GradeName
+            // 
+            this.GradeName.DataPropertyName = "GradeName";
+            this.GradeName.HeaderText = "GradeName";
+            this.GradeName.MinimumWidth = 6;
+            this.GradeName.Name = "GradeName";
+            this.GradeName.ReadOnly = true;
+            // 
+            // colEdit
+            // 
+            dataGridViewCellStyle1.NullValue = "Update";
+            this.colEdit.DefaultCellStyle = dataGridViewCellStyle1;
+            this.colEdit.HeaderText = "Update";
+            this.colEdit.MinimumWidth = 6;
+            this.colEdit.Name = "colEdit";
+            // 
+            // colDel
+            // 
+            dataGridViewCellStyle2.NullValue = "Delete";
+            this.colDel.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colDel.HeaderText = "Delete";
+            this.colDel.MinimumWidth = 6;
+            this.colDel.Name = "colDel";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -83,9 +121,10 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.Location = new System.Drawing.Point(354, 13);
+            this.btnSubmit.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSubmit.Location = new System.Drawing.Point(363, 12);
             this.btnSubmit.Name = "btnSubmit";
-            this.btnSubmit.Size = new System.Drawing.Size(75, 23);
+            this.btnSubmit.Size = new System.Drawing.Size(75, 26);
             this.btnSubmit.TabIndex = 3;
             this.btnSubmit.Text = "Edit";
             this.btnSubmit.UseVisualStyleBackColor = true;
@@ -93,9 +132,10 @@
             // 
             // btnAdd
             // 
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Location = new System.Drawing.Point(12, 12);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(86, 25);
+            this.btnAdd.Size = new System.Drawing.Size(86, 26);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "AddGrade";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -103,50 +143,14 @@
             // 
             // btnDelete
             // 
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.Location = new System.Drawing.Point(453, 12);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.Size = new System.Drawing.Size(75, 26);
             this.btnDelete.TabIndex = 5;
             this.btnDelete.Text = "Delete";
             this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // colCheck
-            // 
-            this.colCheck.HeaderText = "Select";
-            this.colCheck.MinimumWidth = 6;
-            this.colCheck.Name = "colCheck";
-            // 
-            // GradeId
-            // 
-            this.GradeId.DataPropertyName = "GradeId";
-            this.GradeId.HeaderText = "用户编号";
-            this.GradeId.MinimumWidth = 6;
-            this.GradeId.Name = "GradeId";
-            this.GradeId.ReadOnly = true;
-            // 
-            // GradeName
-            // 
-            this.GradeName.DataPropertyName = "GradeName";
-            this.GradeName.HeaderText = "年级名称";
-            this.GradeName.MinimumWidth = 6;
-            this.GradeName.Name = "GradeName";
-            this.GradeName.ReadOnly = true;
-            // 
-            // colEdit
-            // 
-            dataGridViewCellStyle3.NullValue = "Update";
-            this.colEdit.DefaultCellStyle = dataGridViewCellStyle3;
-            this.colEdit.HeaderText = "Update";
-            this.colEdit.MinimumWidth = 6;
-            this.colEdit.Name = "colEdit";
-            // 
-            // colDel
-            // 
-            dataGridViewCellStyle4.NullValue = "Delete";
-            this.colDel.DefaultCellStyle = dataGridViewCellStyle4;
-            this.colDel.HeaderText = "Delete";
-            this.colDel.MinimumWidth = 6;
-            this.colDel.Name = "colDel";
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // FrmGradeList
             // 
@@ -173,15 +177,15 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvGradeList;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn colCheck;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GradeId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn GradeName;
-        private System.Windows.Forms.DataGridViewLinkColumn colEdit;
-        private System.Windows.Forms.DataGridViewLinkColumn colDel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtGradeName;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colCheck;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GradeId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn GradeName;
+        private System.Windows.Forms.DataGridViewLinkColumn colEdit;
+        private System.Windows.Forms.DataGridViewLinkColumn colDel;
     }
 }

@@ -39,6 +39,7 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.btnLogin, "btnLogin");
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -46,6 +47,7 @@
             // 
             // btnExit
             // 
+            this.btnExit.Cursor = System.Windows.Forms.Cursors.Hand;
             resources.ApplyResources(this.btnExit, "btnExit");
             this.btnExit.Name = "btnExit";
             this.btnExit.UseVisualStyleBackColor = true;

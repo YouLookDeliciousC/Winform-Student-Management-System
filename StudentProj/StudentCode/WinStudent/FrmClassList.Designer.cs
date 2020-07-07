@@ -69,9 +69,10 @@
             // 
             // btnDel
             // 
-            this.btnDel.Location = new System.Drawing.Point(622, 24);
+            this.btnDel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnDel.Location = new System.Drawing.Point(622, 19);
             this.btnDel.Name = "btnDel";
-            this.btnDel.Size = new System.Drawing.Size(75, 25);
+            this.btnDel.Size = new System.Drawing.Size(75, 30);
             this.btnDel.TabIndex = 5;
             this.btnDel.Text = "Delete";
             this.btnDel.UseVisualStyleBackColor = true;
@@ -79,9 +80,10 @@
             // 
             // btnFind
             // 
-            this.btnFind.Location = new System.Drawing.Point(528, 24);
+            this.btnFind.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFind.Location = new System.Drawing.Point(528, 19);
             this.btnFind.Name = "btnFind";
-            this.btnFind.Size = new System.Drawing.Size(76, 25);
+            this.btnFind.Size = new System.Drawing.Size(76, 30);
             this.btnFind.TabIndex = 4;
             this.btnFind.Text = "Query";
             this.btnFind.UseVisualStyleBackColor = true;
